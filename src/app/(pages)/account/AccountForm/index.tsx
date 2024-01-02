@@ -1,14 +1,12 @@
 'use client'
 
-import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react'
+import React, { useState, useCallback, useEffect, useRef, Fragment } from 'react'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
-
 import { Button } from '../../../_components/Button'
 import { Input } from '../../../_components/Input'
 import { Message } from '../../../_components/Message'
 import { useAuth } from '../../../_providers/Auth'
-
 import classes from './index.module.scss'
 
 type FormData = {
@@ -41,7 +39,7 @@ const AccountForm: React.FC = () => {
     async (data: FormData) => {
       if (user) {
         const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/${user.id}`, {
-          // Make sure to include cookies with fetch
+          // make sure to include cookies with fetch
           credentials: 'include',
           method: 'PATCH',
           body: JSON.stringify(data),
@@ -53,7 +51,7 @@ const AccountForm: React.FC = () => {
         if (response.ok) {
           const json = await response.json()
           setUser(json.doc)
-          setSuccess('Successfully updated account.')
+          setSuccess('Successfully update account.')
           setError('')
           setChangePassword(false)
           reset({
@@ -74,12 +72,12 @@ const AccountForm: React.FC = () => {
     if (user === null) {
       router.push(
         `/login?error=${encodeURIComponent(
-          'You must be logged in to view this page.',
+          'You must be logged to view this page.',
         )}&redirect=${encodeURIComponent('/account')}`,
       )
     }
 
-    // Once user is loaded, reset form to have default values
+    // once user is loaded, reset form to have default values
     if (user) {
       reset({
         email: user.email,
@@ -95,6 +93,15 @@ const AccountForm: React.FC = () => {
       <Message error={error} success={success} className={classes.message} />
       {!changePassword ? (
         <Fragment>
+          <Input
+            name="email"
+            label="Email address"
+            required
+            register={register}
+            error={errors.email}
+            type="email"
+          />
+          <Input name="name" label="Name" register={register} error={errors.name} />
           <p>
             {'Change your account details below, or '}
             <button
@@ -106,15 +113,6 @@ const AccountForm: React.FC = () => {
             </button>
             {' to change your password.'}
           </p>
-          <Input
-            name="email"
-            label="Email Address"
-            required
-            register={register}
-            error={errors.email}
-            type="email"
-          />
-          <Input name="name" label="Name" register={register} error={errors.name} />
         </Fragment>
       ) : (
         <Fragment>
@@ -125,7 +123,7 @@ const AccountForm: React.FC = () => {
               className={classes.changePassword}
               onClick={() => setChangePassword(!changePassword)}
             >
-              cancel
+              cencel
             </button>
             .
           </p>
