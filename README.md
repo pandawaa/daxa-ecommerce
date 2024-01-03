@@ -1,3 +1,27 @@
+<div align="center">
+  <br />
+      <img src="https://github.com/pandawaa/daxa-ecommerce/blob/main/public/home_page.png">
+    </a>
+  <br />
+
+  <div>
+    <img src="https://img.shields.io/badge/-Next_JS_14-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="Next.js" />
+    <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/-Stripe-black?style=for-the-badge&logoColor=white&logo=stripe&color=008CDD" alt="stripe" />
+  </div>
+
+  <h3 align="center">A Full Stack Next 14 Ecommerce App</h3>
+  
+</div>
+
+## <a name="tech-stack">⚙️ Tech Stack</a>
+
+- Node.js
+- Next.js
+- TypeScript
+- Stripe
+- Payload CMS
+
 # Payload E-Commerce Template
 
 This is the official [Payload E-Commerce Template](https://github.com/payloadcms/payload/blob/main/templates/ecommerce). Use it to power e-commerce businesses and online stores of all sizes. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
